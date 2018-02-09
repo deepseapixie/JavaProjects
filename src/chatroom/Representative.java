@@ -1,30 +1,46 @@
 package chatroom;
 
+import java.util.ArrayList;
+
 public class Representative {
 	private String name;
-	private String caller;
+	private Customer customer;
+	private ArrayList<Customer> customers = new ArrayList<Customer>();
+	private Boolean bundle;
 	
 	public Representative(String name) {
-		this.setName(name);
+		this.name = name;
+		this.bundle = true;
 	}
 	
-	public void AddCaller(String name){
-		setCaller(name);
+	private void canBundle(Customer c){
+		int currentTotalItems = 0;
+		for(Customer customer : customers){
+			currentTotalItems += customer.getNumBooks();
+			currentTotalItems += customer.getNumElectronics();
+		}
+		
+		int customerItems = c.getNumBooks() + c.getNumElectronics();
+		
+		if (currentTotalItems + customerItems <= 10){
+			this.bundle = true;
+		}
+		else {
+			this.bundle = false;
+		}
+	}
+	
+	public void addCustomer(Customer c){
+		canBundle(c);
+		if (bundle)
+			this.customers.add(c);
 	}
 
-	public String getCaller() {
-		return caller;
-	}
-
-	public void setCaller(String caller) {
-		this.caller = caller;
+	public String getCustomer() {
+		return this.customer.getName();
 	}
 
 	public String getName() {
 		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 }
