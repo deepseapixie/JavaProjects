@@ -24,10 +24,10 @@ To manage customer orders, available representatives, and worker assignments, I 
 To simulate the customer orders, an input file contains the customer orders in the same directory as the program
 file.
 
-* CustomerOrder <orderTime> <customer> <numberOfBooks> <numberOfElectronics>
-* PrintAvailableWorkerList <printTime>
-* PrintWorkerAssignmentList <printTime>
-* PrintMaxFulfillmentTime <printTime>
+* CustomerOrder orderTime customer numberOfBooks numberOfElectronics
+* PrintAvailableWorkerList printTime
+* PrintWorkerAssignmentList printTime
+* PrintMaxFulfillmentTime printTime
 
 For simplicity, time is in HHMM format (HH: 00-23 and MM: 00-59), the leading zero is optional. Fulfillment Time is the
 amount of time between when an order is made and when a worker finishes picking items for the order(s). MaxFulfillmentTime
@@ -36,9 +36,9 @@ WorkerAssignmentList is not specified.
 
 ## Output
 
-* CustomerOrder <orderTime> <customer> <numOfBooks> <numOfElectronics>
-* WorkerAssignment <worker> <assignmentTime> <customer1> <customer2> ...
-* OrderCompletion <customer> <orderCompletionTime>
-* AvailableWorkerList <worker1> <worker2> ...
-* WorkerAssignmentList <worker1:customer1> <worker2:customer2a,customer2b> ...
-* MaxFullfillmentTime <numberOfMinutes>
+* CustomerOrder orderTime customer numOfBooks numOfElectronics
+* WorkerAssignment worker assignmentTime customer1 customer2 ...
+* OrderCompletion customer orderCompletionTime
+* AvailableWorkerList worker1 worker2 ...
+* WorkerAssignmentList worker1:customer1 worker2:customer2a,customer2b ...
+* MaxFullfillmentTime numberOfMinutes
