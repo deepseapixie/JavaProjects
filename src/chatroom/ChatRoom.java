@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class ChatRoom {
 	static SinglyLinkedList<Representative> availableReps = new SinglyLinkedList<Representative>();
 	static SinglyLinkedList<Representative> busyReps = new SinglyLinkedList<Representative>();
+	static SinglyLinkedList<Order> currentOrders = new SinglyLinkedList<Order>();
 	
 	public static void main(String[] args) throws FileNotFoundException {
 		String fileName = args[0];
@@ -26,15 +27,19 @@ public class ChatRoom {
 				String time = sc.next();
 				int hour = Integer.parseInt(time.substring(0, 2));
 				int minute = Integer.parseInt(time.substring(2));
-				Time t = new Time(hour, minute);
+				Time time = new Time(hour, minute);
 				
 				String customerName = sc.next();
 				
 				int numBooks = Integer.parseInt(sc.next());
 				int numElectronics = Integer.parseInt(sc.next());
 				
-				Customer c = new Customer(customerName, numBooks, numElectronics);
+				Customer customer = new Customer(customerName, numBooks, numElectronics);
 				
+				Representative representative = availableReps.first();
+				busyReps.addLast(availableReps.removeFirst());
+				
+				currentOrders.addLast(new Order(customer, representative, time));
 			}
 		}
 	}
