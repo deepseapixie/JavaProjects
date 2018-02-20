@@ -44,6 +44,9 @@ WorkerAssignmentList is not specified.
 * MaxFullfillmentTime numberOfMinutes
 
 https://blog.newrelic.com/2016/02/22/8-ways-become-a-better-coder/
+
 https://www.techrepublic.com/article/10-tips-for-becoming-a-better-programmer/
+
 https://www.techrepublic.com/blog/software-engineer/10-tips-to-go-from-a-beginner-to-an-intermediate-developer/#.
+
 https://hackernoon.com/surefire-ways-to-become-a-better-coder-b52c8cb33161
